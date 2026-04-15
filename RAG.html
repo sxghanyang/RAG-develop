@@ -1,0 +1,505 @@
+<!DOCTYPE html><html><head>
+      <title>build</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\user01\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.22\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      <div>
+<h1 id="本地-llm--rag-系统开发计划">本地 LLM + RAG 系统开发计划 </h1>
+<h2 id="一-项目概述">一、项目概述 </h2>
+<p>构建一个完全本地化部署的 <strong>大语言模型（LLM）+ 检索增强生成（RAG）</strong> 系统，实现基于私有知识库的智能问答、文档检索与内容生成能力。所有数据和模型均在本地运行，确保数据隐私与安全。</p>
+<hr>
+<h2 id="二-技术架构">二、技术架构 </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────┐
+│                  前端交互层                        │
+│           (Web UI / API / CLI)                   │
+├─────────────────────────────────────────────────┤
+│                 应用编排层                         │
+│        (LangChain / LlamaIndex)                  │
+├──────────────┬──────────────────────────────────┤
+│  检索模块     │         生成模块                   │
+│  (Retriever) │     (Local LLM)                   │
+├──────────────┼──────────────────────────────────┤
+│  向量数据库   │      模型推理引擎                   │
+│  (Milvus /   │   (Ollama / llama.cpp /           │
+│   Chroma /   │    vLLM / LocalAI)               │
+│   FAISS)     │                                   │
+├──────────────┴──────────────────────────────────┤
+│              文档处理与嵌入层                       │
+│    (文档解析 / 分块 / Embedding模型)               │
+├─────────────────────────────────────────────────┤
+│              数据存储层                            │
+│     (本地文件系统 / SQLite / MinIO)               │
+└─────────────────────────────────────────────────┘
+</code></pre><hr>
+<h2 id="三-技术选型">三、技术选型 </h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>候选方案</th>
+<th>推荐选择</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>本地LLM推理</strong></td>
+<td>Ollama / llama.cpp / vLLM / LocalAI</td>
+<td><strong>Ollama</strong></td>
+<td>部署简单，支持多种模型，API兼容OpenAI格式</td>
+</tr>
+<tr>
+<td><strong>LLM模型</strong></td>
+<td>Llama3 / Mistral / Phi-3 / Gemma2 / Command-R</td>
+<td><strong>Llama3-8B / 70B</strong></td>
+<td>英文能力强，开源免费，社区生态丰富</td>
+</tr>
+<tr>
+<td><strong>Embedding模型</strong></td>
+<td>nomic-embed / all-MiniLM / bge-en / GTE / E5</td>
+<td><strong>nomic-embed-text / bge-large-en-v1.5</strong></td>
+<td>英文检索效果优秀，MTEB排名靠前</td>
+</tr>
+<tr>
+<td><strong>向量数据库</strong></td>
+<td>Chroma / Milvus / FAISS / Qdrant / Weaviate</td>
+<td><strong>Chroma</strong>（轻量）/ <strong>Milvus</strong>（生产）</td>
+<td>Chroma上手快；Milvus适合大规模数据</td>
+</tr>
+<tr>
+<td><strong>编排框架</strong></td>
+<td>LangChain / LlamaIndex / Haystack</td>
+<td><strong>LangChain</strong></td>
+<td>生态丰富，社区活跃，文档完善</td>
+</tr>
+<tr>
+<td><strong>文档解析</strong></td>
+<td>Unstructured / PyPDF / docling / marker</td>
+<td><strong>Unstructured</strong></td>
+<td>支持多种格式（PDF/Word/HTML/Markdown等）</td>
+</tr>
+<tr>
+<td><strong>前端界面</strong></td>
+<td>Gradio / Streamlit / FastAPI+Vue</td>
+<td><strong>Gradio</strong>（原型）/ <strong>FastAPI+Vue</strong>（生产）</td>
+<td>快速原型用Gradio，生产环境用前后端分离</td>
+</tr>
+<tr>
+<td><strong>Reranker</strong></td>
+<td>bge-reranker / cohere-reranker / cross-encoder</td>
+<td><strong>bge-reranker-v2-m3</strong></td>
+<td>本地部署，提升检索精度</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="四-开发阶段与里程碑">四、开发阶段与里程碑 </h2>
+<h3 id="第一阶段环境搭建与基础验证第1-2周">第一阶段：环境搭建与基础验证（第1-2周） </h3>
+<h4 id="11-开发环境准备">1.1 开发环境准备 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 安装 Python 3.10+ 环境（推荐使用 conda / venv）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 安装 CUDA Toolkit（如有NVIDIA GPU）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 安装 Ollama 并拉取基础模型<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># 安装Ollama后拉取模型  ollama pull llama3:8b</span>
+ollama pull llama3:70b            <span class="token comment"># 如显存充足</span>
+ollama pull nomic-embed-text      <span class="token comment"># Embedding模型</span>
+</code></pre></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 初始化 Python 项目结构<pre data-role="codeBlock" data-info="" class="language-text"><code>RAG/
+├── build.md                # 开发计划
+├── requirements.txt        # Python 依赖
+├── config/
+│   └── settings.yaml       # 配置文件
+├── src/
+│   ├── __init__.py
+│   ├── document_loader/    # 文档加载模块
+│   ├── embeddings/         # 向量嵌入模块
+│   ├── vectorstore/        # 向量数据库模块
+│   ├── retriever/          # 检索模块
+│   ├── llm/                # LLM交互模块
+│   ├── chains/             # RAG链编排
+│   ├── reranker/           # 重排序模块
+│   └── api/                # API服务
+├── web/                    # 前端界面
+├── data/
+│   ├── raw/                # 原始文档
+│   ├── processed/          # 处理后的文档
+│   └── vectordb/           # 向量数据库存储
+├── tests/                  # 测试用例
+├── scripts/                # 工具脚本
+└── docs/                   # 项目文档
+</code></pre></li>
+</ul>
+<h4 id="12-基础功能验证">1.2 基础功能验证 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 验证 Ollama 本地 LLM 调用（REST API / Python SDK）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 验证 Embedding 模型生成向量</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 验证向量数据库基本 CRUD 操作</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 完成一个最简 RAG 问答 demo（端到端跑通）</li>
+</ul>
+<p><strong>里程碑</strong>：能通过命令行输入问题，从测试文档中检索并生成回答。</p>
+<hr>
+<h3 id="第二阶段文档处理管线第3-4周">第二阶段：文档处理管线（第3-4周） </h3>
+<h4 id="21-文档加载与解析">2.1 文档加载与解析 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 支持多格式文档加载
+<ul>
+<li>PDF（含扫描版OCR）</li>
+<li>Word (.docx)</li>
+<li>Markdown</li>
+<li>HTML / 网页</li>
+<li>TXT / CSV</li>
+<li>PowerPoint (.pptx)</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 文档元数据提取（标题、作者、日期、来源等）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 表格与图片内容提取</li>
+</ul>
+<h4 id="22-文本分块策略chunking">2.2 文本分块策略（Chunking） </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 实现多种分块策略
+<ul>
+<li><strong>固定大小分块</strong>：按字符数/Token数切分</li>
+<li><strong>递归字符分块</strong>：按分隔符递归切分（推荐默认）</li>
+<li><strong>语义分块</strong>：基于语义相似度切分</li>
+<li><strong>文档结构分块</strong>：基于标题/章节切分</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 分块参数可配置（chunk_size, chunk_overlap）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 分块质量评估工具</li>
+</ul>
+<h4 id="23-向量化与入库">2.3 向量化与入库 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 批量文档向量化处理</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 增量更新机制（新增/修改/删除文档）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 向量化进度跟踪与日志</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 文档去重检测</li>
+</ul>
+<p><strong>里程碑</strong>：支持上传多种格式文档，自动处理并入库，支持增量更新。</p>
+<hr>
+<h3 id="第三阶段检索与生成优化第5-7周">第三阶段：检索与生成优化（第5-7周） </h3>
+<h4 id="31-检索策略优化">3.1 检索策略优化 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> <strong>基础向量检索</strong>：余弦相似度 / L2距离</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> <strong>混合检索（Hybrid Search）</strong>：向量检索 + BM25关键词检索</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> <strong>多路召回</strong>：不同检索策略结果融合</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> <strong>Reranker重排序</strong>：使用 bge-reranker 对初检结果精排</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> <strong>元数据过滤</strong>：按文档来源、日期、类型等过滤</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 检索参数调优（top_k, score_threshold 等）</li>
+</ul>
+<h4 id="32-prompt工程">3.2 Prompt工程 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 设计系统 Prompt 模板</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 上下文注入策略优化</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 多轮对话 Prompt 管理</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Prompt 模板版本管理</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 支持不同场景的 Prompt 模板（问答/摘要/分析等）</li>
+</ul>
+<h4 id="33-生成质量优化">3.3 生成质量优化 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 引用来源标注（生成结果标注引用的文档片段）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 答案置信度评估</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 幻觉检测与缓解策略</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 长文档摘要生成</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 流式输出（Streaming）</li>
+</ul>
+<h4 id="34-查询优化">3.4 查询优化 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> <strong>查询改写（Query Rewriting）</strong>：优化用户输入</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> <strong>查询扩展（Query Expansion）</strong>：自动扩展关键词</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> <strong>HyDE（Hypothetical Document Embedding）</strong>：假设性文档嵌入</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> <strong>多步检索（Multi-step Retrieval）</strong>：复杂问题分步检索</li>
+</ul>
+<p><strong>里程碑</strong>：检索准确率和生成质量显著提升，支持引用来源标注。</p>
+<hr>
+<h3 id="第四阶段api服务与前端开发第8-9周">第四阶段：API服务与前端开发（第8-9周） </h3>
+<h4 id="41-后端-api-服务">4.1 后端 API 服务 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 基于 FastAPI 构建 RESTful API
+<ul>
+<li><code>POST /api/chat</code> — 对话接口（支持流式）</li>
+<li><code>POST /api/documents/upload</code> — 文档上传</li>
+<li><code>GET /api/documents</code> — 文档列表</li>
+<li><code>DELETE /api/documents/{id}</code> — 删除文档</li>
+<li><code>POST /api/knowledge-base/create</code> — 创建知识库</li>
+<li><code>GET /api/knowledge-base/list</code> — 知识库列表</li>
+<li><code>POST /api/search</code> — 独立检索接口</li>
+<li><code>GET /api/system/status</code> — 系统状态</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> API 认证与权限管理</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 请求速率限制</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> API 文档自动生成（Swagger/OpenAPI）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> WebSocket 支持（实时流式输出）</li>
+</ul>
+<h4 id="42-前端界面">4.2 前端界面 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 对话界面（类ChatGPT风格）
+<ul>
+<li>多轮对话支持</li>
+<li>流式打字效果</li>
+<li>引用来源展示（可点击跳转）</li>
+<li>对话历史管理</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 知识库管理界面
+<ul>
+<li>文档上传（拖拽上传）</li>
+<li>文档列表与状态展示</li>
+<li>知识库创建/删除/配置</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 系统配置界面
+<ul>
+<li>模型选择与参数调整</li>
+<li>检索参数配置</li>
+<li>分块策略配置</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 系统监控仪表板
+<ul>
+<li>模型运行状态</li>
+<li>向量数据库统计</li>
+<li>查询日志与性能指标</li>
+</ul>
+</li>
+</ul>
+<p><strong>里程碑</strong>：完成可用的Web界面，支持文档管理和知识库问答。</p>
+<hr>
+<h3 id="第五阶段高级功能与优化第10-12周">第五阶段：高级功能与优化（第10-12周） </h3>
+<h4 id="51-多知识库管理">5.1 多知识库管理 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 支持创建多个独立知识库</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 知识库权限隔离</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 跨知识库检索</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 知识库导入/导出</li>
+</ul>
+<h4 id="52-对话与记忆管理">5.2 对话与记忆管理 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 对话历史持久化存储</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 对话摘要记忆（长对话压缩）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 多会话管理</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 对话导出（Markdown / PDF）</li>
+</ul>
+<h4 id="53-agent-能力扩展">5.3 Agent 能力扩展 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 工具调用（Tool Use）：计算器、天气、搜索等</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 多步推理（Chain of Thought）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 自主决定是否需要检索</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 支持 Function Calling</li>
+</ul>
+<h4 id="54-性能优化">5.4 性能优化 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 向量检索缓存（常见查询缓存）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 模型推理加速（量化：GGUF Q4/Q5/Q8）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 批量推理优化</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 异步处理管线</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> GPU 显存优化策略</li>
+</ul>
+<p><strong>里程碑</strong>：系统功能完善，性能优化到位，具备生产部署条件。</p>
+<hr>
+<h3 id="第六阶段测试-部署与运维第13-14周">第六阶段：测试、部署与运维（第13-14周） </h3>
+<h4 id="61-测试">6.1 测试 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 单元测试（各模块核心函数）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 集成测试（端到端流程）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 检索质量评估（Recall@K, MRR, NDCG）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 生成质量评估（人工评估 + 自动化指标）</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 压力测试与性能基准</li>
+</ul>
+<h4 id="62-部署">6.2 部署 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Docker 容器化部署<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># docker-compose.yml 主要服务</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ollama</span><span class="token punctuation">:</span>        <span class="token comment"># LLM推理服务</span>
+  <span class="token key atrule">vectordb</span><span class="token punctuation">:</span>      <span class="token comment"># 向量数据库</span>
+  <span class="token key atrule">backend</span><span class="token punctuation">:</span>       <span class="token comment"># FastAPI后端</span>
+  <span class="token key atrule">frontend</span><span class="token punctuation">:</span>      <span class="token comment"># Web前端</span>
+</code></pre></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Docker Compose 一键部署脚本</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 环境变量与配置管理</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 数据持久化与备份方案</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> GPU 资源分配配置</li>
+</ul>
+<h4 id="63-运维与监控">6.3 运维与监控 </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 日志收集与管理</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 系统健康检查</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 自动重启与故障恢复</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> 使用数据统计与分析</li>
+</ul>
+<p><strong>里程碑</strong>：系统通过测试，完成容器化部署，具备稳定运维能力。</p>
+<hr>
+<h2 id="五-硬件要求建议">五、硬件要求建议 </h2>
+<table>
+<thead>
+<tr>
+<th>配置等级</th>
+<th>GPU</th>
+<th>内存</th>
+<th>存储</th>
+<th>推荐模型规模</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>入门级</strong></td>
+<td>无GPU / GTX 1660 6GB</td>
+<td>16GB</td>
+<td>50GB SSD</td>
+<td>1B-3B 模型（量化）</td>
+</tr>
+<tr>
+<td><strong>标准级</strong></td>
+<td>RTX 3060 12GB / RTX 4060 8GB</td>
+<td>32GB</td>
+<td>100GB SSD</td>
+<td>7B-8B 模型（量化）</td>
+</tr>
+<tr>
+<td><strong>推荐级</strong></td>
+<td>RTX 3090 24GB / RTX 4090 24GB</td>
+<td>64GB</td>
+<td>200GB SSD</td>
+<td>14B-32B 模型</td>
+</tr>
+<tr>
+<td><strong>高性能</strong></td>
+<td>双卡 / A100 40GB+</td>
+<td>128GB</td>
+<td>500GB NVMe</td>
+<td>70B+ 模型</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="六-核心依赖包">六、核心依赖包 </h2>
+<pre data-role="codeBlock" data-info="txt" class="language-txt txt"><code># requirements.txt
+
+# LLM &amp; Embedding
+langchain&gt;=0.3.0
+langchain-community&gt;=0.3.0
+langchain-ollama&gt;=0.2.0
+ollama&gt;=0.4.0
+
+# 向量数据库
+chromadb&gt;=0.5.0
+# pymilvus&gt;=2.4.0          # 如使用Milvus
+
+# 文档处理
+unstructured[all-docs]&gt;=0.15.0
+pypdf&gt;=4.0.0
+python-docx&gt;=1.1.0
+beautifulsoup4&gt;=4.12.0
+
+# Embedding &amp; Reranker（本地模型）
+sentence-transformers&gt;=3.0.0
+FlagEmbedding&gt;=1.2.0       # bge系列模型
+
+# API服务
+fastapi&gt;=0.115.0
+uvicorn&gt;=0.30.0
+python-multipart&gt;=0.0.9
+websockets&gt;=12.0
+
+# 前端（快速原型）
+gradio&gt;=4.40.0
+
+# 工具库
+pydantic&gt;=2.8.0
+pyyaml&gt;=6.0
+rich&gt;=13.0                  # 终端美化输出
+tqdm&gt;=4.66.0
+</code></pre><hr>
+<h2 id="七-关键技术风险与应对">七、关键技术风险与应对 </h2>
+<table>
+<thead>
+<tr>
+<th>风险</th>
+<th>影响</th>
+<th>应对策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPU显存不足</td>
+<td>无法加载大模型</td>
+<td>使用量化模型（Q4_K_M）；选用小参数模型；CPU推理兜底</td>
+</tr>
+<tr>
+<td>检索精度不够</td>
+<td>回答质量差</td>
+<td>混合检索 + Reranker；优化分块策略；增加元数据过滤</td>
+</tr>
+<tr>
+<td>中文处理效果差</td>
+<td>分词/理解不准</td>
+<td>选择英文优化模型（Llama3/Mistral）；使用英文Embedding模型</td>
+</tr>
+<tr>
+<td>文档解析失败</td>
+<td>部分文档无法入库</td>
+<td>多解析器兜底；人工标注兜底；OCR增强</td>
+</tr>
+<tr>
+<td>幻觉问题</td>
+<td>生成不准确内容</td>
+<td>严格Prompt约束；引用来源核验；置信度评估过滤</td>
+</tr>
+<tr>
+<td>并发性能瓶颈</td>
+<td>响应慢/超时</td>
+<td>请求队列；模型推理缓存；异步处理</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="八-项目时间线总览">八、项目时间线总览 </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>第1-2周   ████ 环境搭建与基础验证
+第3-4周   ████ 文档处理管线
+第5-7周   ██████ 检索与生成优化
+第8-9周   ████ API服务与前端开发
+第10-12周 ██████ 高级功能与优化
+第13-14周 ████ 测试、部署与运维
+</code></pre><p><strong>预计总工期：14周（约3.5个月）</strong></p>
+<hr>
+<h2 id="九-后续扩展方向">九、后续扩展方向 </h2>
+<ul>
+<li>🔄 <strong>多模态RAG</strong>：支持图片、音频、视频内容理解与检索</li>
+<li>🌐 <strong>联网增强</strong>：可选联网搜索补充本地知识库不足</li>
+<li>🧠 <strong>GraphRAG</strong>：引入知识图谱，增强实体关系推理</li>
+<li>📊 <strong>数据分析Agent</strong>：支持结构化数据（数据库/Excel）的自然语言查询</li>
+<li>🔌 <strong>插件系统</strong>：可扩展的插件架构，支持自定义工具与数据源</li>
+<li>🏢 <strong>多用户支持</strong>：用户管理、权限控制、使用量统计</li>
+<li>📱 <strong>移动端适配</strong>：响应式Web或移动App接入</li>
+</ul>
+</div>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
